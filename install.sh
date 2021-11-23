@@ -22,6 +22,16 @@ else
 fi
 
 
+#######check git-completion.bash exists
+completionBashFILE=git-completion.bash
+if [[ -f "$completionBashFILE" ]]; then
+    cp $completionBashFILE /Users/Shared
+    echo "copy the file"
+else
+    echo "The $completionBashFILE File does not exist"
+fi
+
+
 #######check git-prompt exists
 promptFILE=git-prompt.sh
 if [[ -f "$promptFILE" ]]; then
