@@ -4,7 +4,7 @@ syntax on
 
 set nocompatible
 filetype off
-set guicursor=
+"set guicursor=
 set noshowmatch
 set relativenumber
 set nohlsearch
