@@ -3,8 +3,9 @@
 source ~/.bash_profile
 autoload -U colors && colors
 #PROMPT="%F{red}Code %F{cyan}%1~$ %f"
-PROMPT="%F{red}-> %F{cyan}%1~$ %f"
+#PROMPT="%F{red}-> %F{cyan}%1~$ %f"
 #PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$cyan%}%% "
+PS1="%{$fg[cyan]%}%t %{$fg[yellow]%}%n %{$fg[red]%}%~ $%{$fg[cyan]%} "
 #
 
 bindkey "^?" backward-delete-char
