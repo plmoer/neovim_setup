@@ -113,6 +113,12 @@ nnoremap <silent> <C-g> :GFiles<CR>
 nnoremap <silent> <C-o> :Buffers<CR>
 nnoremap <C-f> :Rg!
 
+"NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 "ale
 let g:ale_linters = {'python': ['flake8', 'pydocstyle', 'bandit', 'mypy']}
 "let g:ale_fixers = {'*': [], 'python': ['black', 'isort']}
