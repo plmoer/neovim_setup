@@ -170,10 +170,10 @@ nnoremap <C-l> <C-w>l
 " noremap <silent> <C-Right> :vertical resize -3<CR>
 " noremap <silent> <C-Up> :resize +3<CR>
 " noremap <silent> <C-Down> :resize -3<CR>
-noremap <silent> s<Left> :vertical resize +3<CR>
-noremap <silent> s<Right> :vertical resize -3<CR>
-noremap <silent> s<Up> :resize +3<CR>
-noremap <silent> s<Down> :resize -3<CR>
+noremap <silent> w<Left> :vertical resize +3<CR>
+noremap <silent> w<Right> :vertical resize -3<CR>
+noremap <silent> w<Up> :resize +3<CR>
+noremap <silent> w<Down> :resize -3<CR>
 
 
 "Moving text
