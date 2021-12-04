@@ -27,6 +27,7 @@ set incsearch
 set cmdheight=2
 set ignorecase
 set cursorline
+set splitbelow splitright
 "set mouse=a
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
@@ -156,3 +157,27 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+"remap splits navigation to just Ctrl+ijkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+"Adjust split window size
+" noremap <silent> <C-Left> :vertical resize +3<CR>
+" noremap <silent> <C-Right> :vertical resize -3<CR>
+" noremap <silent> <C-Up> :resize +3<CR>
+" noremap <silent> <C-Down> :resize -3<CR>
+noremap <silent> s<Left> :vertical resize +3<CR>
+noremap <silent> s<Right> :vertical resize -3<CR>
+noremap <silent> s<Up> :resize +3<CR>
+noremap <silent> s<Down> :resize -3<CR>
+
+
+"Moving text
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-j> <esc>:m .+1<CR>==
+inoremap <C-k> <esc>:m .-2<CR>==
+nnoremap <leader>k :m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
