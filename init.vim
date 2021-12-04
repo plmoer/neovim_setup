@@ -97,6 +97,8 @@ Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()
 
+let mapleader = "," " map leader to comma
+
 " gruvbox
 colorscheme gruvbox
 
