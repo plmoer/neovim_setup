@@ -28,7 +28,6 @@ set cmdheight=2
 set ignorecase
 set cursorline
 set splitbelow splitright
-"set mouse=a
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -77,27 +76,32 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-commentary' " comment with gcc & gc
 Plug 'preservim/nerdtree'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
-"Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
 Plug 'dense-analysis/ale'
-"Plug 'itchyny/lightline.vim'
+
 
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-cmp'
 
+Plug 'glepnir/lspsaga.nvim'
+
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-let mapleader = "," " map leader to comma
+let mapleader = ","
 
 " gruvbox
 colorscheme gruvbox
@@ -126,6 +130,9 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+
+
+
 "ale
 let g:ale_linters = {'python': ['flake8', 'pydocstyle', 'bandit', 'mypy']}
 "let g:ale_fixers = {'*': [], 'python': ['black', 'isort']}
@@ -147,7 +154,7 @@ hi SpellCap cterm=underline ctermfg=203 guifg=#ff5f5f
 "hi Search cterm=NONE ctermfg=black ctermbg=lightblue
 
 
-"Telescope
+" Telescope
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -155,10 +162,12 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Using Lua functions
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+" nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+" nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+" nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+" nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+"
+
 
 "remap splits navigation to just Ctrl+ijkl
 nnoremap <C-h> <C-w>h
@@ -183,3 +192,11 @@ inoremap <C-j> <esc>:m .+1<CR>==
 inoremap <C-k> <esc>:m .-2<CR>==
 nnoremap <leader>k :m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
+
+source /Users/linminpei/.config/nvim/configures/lsp-config.vim
+source /Users/linminpei/.config/nvim/configures/lsp-saga.vim
+source /Users/linminpei/.config/nvim/configures/coc.vim
+" luafile /Users/linminpei/.config/nvim/configures/formatting.lua
+
+"Switch to your current theme
+let g:airline_theme = 'onedark'
