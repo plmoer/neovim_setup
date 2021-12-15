@@ -1,5 +1,3 @@
-
-
 PATH=/bin
 export PATH
 PATH=/usr/bin:$PATH

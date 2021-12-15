@@ -1,5 +1,3 @@
-
-
 source ~/.bash_profile
 autoload -U colors && colors
 
@@ -11,7 +9,7 @@ function git_branch_name()
   then
     :
   else
-    echo '('$branch')->'
+    echo '('$branch')'
   fi
 }
 
@@ -22,7 +20,7 @@ setopt prompt_subst
 #PROMPT="%F{red}-> %F{cyan}%1~$ %f"
 #PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$cyan%}%% "
 #PS1="%{$fg[cyan]%}%t %{$fg[yellow]%}%n %{$fg[red]%}%~ $%{$fg[white]%} "
-PS1='%{$fg[cyan]%}%t %{$fg[yellow]%}%n %{$fg[red]%}%~ $%{$fg[green]%}$(git_branch_name)%{$fg[white]%} '
+PS1='%{$fg[cyan]%}%t %{$fg[yellow]%}%n %{$fg[red]%}%~ $ %{$fg[green]%}$(git_branch_name)%{$fg[white]%}'
 #
 
 echo -ne '\e[5 q'
